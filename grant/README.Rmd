@@ -1,0 +1,43 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# Overview
+
+This package is aimed to provide a comprehensive understanding to the grant
+opportunities in the United States of America. The data of grant information 
+is contained, which could be explored with some interactive feature of the
+plots in the shiny website.
+
+
+
+## Installation
+
+You can install the development version of grant from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17")
+remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17", subdir = "grant")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(grant)
+## basic example code
+```
+
