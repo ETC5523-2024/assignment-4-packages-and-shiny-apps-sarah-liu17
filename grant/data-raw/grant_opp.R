@@ -32,7 +32,8 @@ grant_opp <- read_csv("data-raw/grant_opportunity_details.csv") |>
          eligibility_unrestricted)
 
 
-grant <- read_csv("data-raw/grants.csv")
+grant <- read_csv("data-raw/grants.csv") |>
+  select(opportunity_id, opportunity_title, estimated_funding, expected_number_of_awards)
 
 usethis::use_data(grant, overwrite = TRUE)
 

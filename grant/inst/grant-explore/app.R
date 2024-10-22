@@ -164,69 +164,69 @@ server <- function(input, output) {
   filtered_grants <- reactive({
     req(input$category_input)
 
-    data <- grant_opp %>%
+    data <- grant_opp |>
       filter(category %in% input$category_input)
 
     if (length(input$year_input) > 0) {
       if ("2030 onwards" %in% input$year_input) {
-        data <- data %>% filter(as.numeric(format(current_closing_date_for_applications, "%Y")) >= 2030)
+        data <- data |> filter(as.numeric(format(current_closing_date_for_applications, "%Y")) >= 2030)
       } else {
         selected_years <- as.numeric(input$year_input)
-        data <- data %>% filter(as.numeric(format(current_closing_date_for_applications, "%Y")) %in% selected_years)
+        data <- data |> filter(as.numeric(format(current_closing_date_for_applications, "%Y")) %in% selected_years)
       }
     }
 
     # Apply eligibility filters
     if (input$eligibility_individuals) {
-      data <- data %>% filter(eligibility_individuals == TRUE)
+      data <- data |> filter(eligibility_individuals == TRUE)
     }
     if (input$eligibility_state_governments) {
-      data <- data %>% filter(eligibility_state_governments == TRUE)
+      data <- data |> filter(eligibility_state_governments == TRUE)
     }
     if (input$eligibility_county_governments) {
-      data <- data %>% filter(eligibility_county_governments == TRUE)
+      data <- data |> filter(eligibility_county_governments == TRUE)
     }
     if (input$eligibility_independent_school_districts) {
-      data <- data %>% filter(eligibility_independent_school_districts == TRUE)
+      data <- data |> filter(eligibility_independent_school_districts == TRUE)
     }
     if (input$eligibility_city_or_township_governments) {
-      data <- data %>% filter(eligibility_city_or_township_governments == TRUE)
+      data <- data |> filter(eligibility_city_or_township_governments == TRUE)
     }
     if (input$eligibility_special_district_governments) {
-      data <- data %>% filter(eligibility_special_district_governments == TRUE)
+      data <- data |> filter(eligibility_special_district_governments == TRUE)
     }
     if (input$eligibility_native_american_tribal_governments_federally_recognized) {
-      data <- data %>% filter(eligibility_native_american_tribal_governments_federally_recognized == TRUE)
+      data <- data |> filter(eligibility_native_american_tribal_governments_federally_recognized == TRUE)
     }
     if (input$eligibility_native_american_tribal_organizations_other) {
-      data <- data %>% filter(eligibility_native_american_tribal_organizations_other == TRUE)
+      data <- data |> filter(eligibility_native_american_tribal_organizations_other == TRUE)
     }
     if (input$eligibility_nonprofits_501c3) {
-      data <- data %>% filter(eligibility_nonprofits_501c3 == TRUE)
+      data <- data |> filter(eligibility_nonprofits_501c3 == TRUE)
     }
     if (input$eligibility_nonprofits_non_501c3) {
-      data <- data %>% filter(eligibility_nonprofits_non_501c3 == TRUE)
+      data <- data |> filter(eligibility_nonprofits_non_501c3 == TRUE)
     }
     if (input$eligibility_for_profit) {
-      data <- data %>% filter(eligibility_for_profit == TRUE)
+      data <- data |> filter(eligibility_for_profit == TRUE)
     }
     if (input$eligibility_small_businesses) {
-      data <- data %>% filter(eligibility_small_businesses == TRUE)
+      data <- data |> filter(eligibility_small_businesses == TRUE)
     }
     if (input$eligibility_private_institutions_of_higher_education) {
-      data <- data %>% filter(eligibility_private_institutions_of_higher_education == TRUE)
+      data <- data |> filter(eligibility_private_institutions_of_higher_education == TRUE)
     }
     if (input$eligibility_public_institutions_of_higher_education) {
-      data <- data %>% filter(eligibility_public_institutions_of_higher_education == TRUE)
+      data <- data |> filter(eligibility_public_institutions_of_higher_education == TRUE)
     }
     if (input$eligibility_public_indian_housing_authorities) {
-      data <- data %>% filter(eligibility_public_indian_housing_authorities == TRUE)
+      data <- data |> filter(eligibility_public_indian_housing_authorities == TRUE)
     }
     if (input$eligibility_others) {
-      data <- data %>% filter(eligibility_others == TRUE)
+      data <- data |> filter(eligibility_others == TRUE)
     }
     if (input$eligibility_unrestricted) {
-      data <- data %>% filter(eligibility_unrestricted == TRUE)
+      data <- data |> filter(eligibility_unrestricted == TRUE)
     }
 
     data
@@ -274,7 +274,7 @@ server <- function(input, output) {
              award_ceiling >= input$ceiling_range[1],
              award_ceiling <= input$ceiling_range[2],
              award_floor >= input$floor_range[1],
-             award_floor <= input$floor_range[2]) %>%
+             award_floor <= input$floor_range[2]) |>
       # Select only the required columns and calculate the award difference
       select(
         funding_opportunity_title,
@@ -282,7 +282,7 @@ server <- function(input, output) {
         award_ceiling,
         award_floor,
         category
-      ) %>%
+      ) |>
       mutate(award_difference = award_ceiling - award_floor)  # Calculate the difference
 
     # Include the calculated difference in the datatable
@@ -299,15 +299,15 @@ server <- function(input, output) {
 
   # New server logic for top funded grants tab
   top_grants <- reactive({
-    top_est_fund <- grant_opp %>%
-      group_by(opportunity_id) %>%
-      mutate(total_funding = sum(estimated_total_program_funding, na.rm = TRUE)) %>%
-      arrange(desc(total_funding)) %>%
+    top_est_fund <- grant_opp |>
+      group_by(opportunity_id) |>
+      mutate(total_funding = sum(estimated_total_program_funding, na.rm = TRUE)) |>
+      arrange(desc(total_funding)) |>
       head(input$top_n)  # Dynamically use the input for the number of top grants
 
     # Join with the grants dataset to get the title
-    top_est_fund <- top_est_fund %>%
-      inner_join(grant, by = "opportunity_id") %>%
+    top_est_fund <- top_est_fund |>
+      inner_join(grant, by = "opportunity_id") |>
       select(opportunity_title, total_funding, category)
 
     return(top_est_fund)

@@ -1,5 +1,5 @@
 ---
-title: "grant"
+title: "grant package usage"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{grant}
@@ -14,23 +14,29 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, message = FALSE, warning = FALSE}
 library(grant)
+library(ggplot2)
+library(dplyr)
 ```
 
-Introduction
-Welcome to the grantExplore package, a tool designed to help users explore and analyze grant opportunities with an interactive Shiny app. This vignette will walk you through the key functionalities of the package, including how to install the package, launch the Shiny app, and use the different features for exploring the dataset of grant opportunities.
+# Introduction
+Welcome to the grant package, a tool designed to help users explore and analyze grant opportunities in the United States of America with an interactive Shiny app. This vignette will walk you through the key functionalities of the package, including how to install the package, launch the Shiny app, and use the different features for exploring the dataset of grant opportunities.
 
 Installation
-To install the grantExplore package, you can use the remotes package to install it directly from GitHub.
+To install the grant package, you can use the remotes package to install it directly from GitHub.
 
-r
-Copy code
+```{r,eval = FALSE, echo=TRUE}
 # Install the remotes package if you haven't already
 install.packages("remotes")
+```
 
-# Install the grantExplore package from GitHub
-remotes::install_github("yourusername/grantExplore")
+```{r, eval = FALSE, echo=TRUE}
+# Install the grant package from GitHub
+remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17", subdir = "grant")
+```
+
+
 Once installed, you can load the package as follows:
 
 Launching the Shiny App:
@@ -41,20 +47,24 @@ library(grant)
 The Shiny app is the main feature of this package. It allows you to filter, analyze, and visualize grant opportunities interactively. To launch the app, simply run the following function:
 
 
-r
-Copy code
-launch_grant_app()
-This will open the Shiny dashboard in your web browser, where you can start exploring the dataset.
 
-The Grant Opportunities Dataset
-The dataset used in this package (grant_opp) contains detailed information about grant opportunities, including categories, award ceilings and floors, and application deadlines. The dataset is cleaned and stored within the package, and no additional data loading is required.
+This will open the Shiny dashboard in your web browser, where you can start exploring the dataset of grant opportunities.
+```{r, eval=FALSE, echo=TRUE}
+run_grant_app()
+```
 
-Key Variables
-category: The category of the grant (e.g., Science, Education, Technology).
-award_ceiling: The maximum amount that can be awarded for the grant.
-award_floor: The minimum amount that can be awarded.
-current_closing_date_for_applications: The application deadline for the grant.
-Shiny App Features
+# The Grant Opportunities Dataset
+The datasets used in this package contains detailed information about grant opportunities, and is downloaded from the [TidyTuesday packgae](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-10-03/readme.md), including category, award ceilings and floors, and application deadlines. The dataset is cleaned and stored within the package, and no additional data loading is required.
+
+# Explore the dataset
+ 
+Run the below summarise function to explore the number the number of grant opportunities and total funding by category.
+```{r}
+summarize_grants_by_category(grant_opp)
+```
+
+
+# Shiny App Features
 1. Filter Grants
 The "Filter Grants" tab allows you to filter grant opportunities based on the category and year of application. This tab provides a dynamic table that updates based on your selections.
 
@@ -69,16 +79,10 @@ Award Ceiling & Floor Filters: Use the sliders to adjust the range of awards you
 Category Filter: Select the grant categories you're interested in analyzing.
 The results will be shown in a bar plot and a summary table. The plot displays the difference between the mean award ceiling and floor for each selected category, helping you easily compare different categories.
 
-Customizing the App
-The app's UI is built with the shinydashboard package and includes some basic styling. Users who are familiar with Shiny can further customize the app's appearance and interactivity.
+3. Top funded grants
+The "Top funded grants" tab display the most interested areas the government is emphasising, which could assist users to
+identify key grants and prioritise their applications or align their objectives with those national core objectives.
+The number could be inserted to show the specified number of top funded grants.
 
-Vignette Summary
-This vignette covered the following:
 
-Installing the package
-Launching the Shiny app
-Features of the Shiny app:
-Filtering grants by category and year
-Analyzing award ceilings and floors
-With these features, the grantExplore package provides an interactive and intuitive way to explore grant opportunities and make data-driven decisions.
 

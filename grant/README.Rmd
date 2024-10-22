@@ -31,10 +31,14 @@ remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is an example to explore the grants
 
 ```{r example}
-library(grant)
-## basic example code
+summarize_grants_by()
+```
+
+## Shiny interactive app to explore the grants
+```{r, eval = FALSE, echo=TRUE}
+run_grant_app()
 ```
 
