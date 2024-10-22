@@ -15,10 +15,7 @@ knitr::opts_chunk$set(
 
 # Overview
 
-This package is aimed to provide a comprehensive understanding to the grant
-opportunities in the United States of America. The data of grant information 
-is contained, which could be explored with some interactive feature of the
-plots in the shiny website.
+Grant is an R package designed to provide a comprehensive exploration of grant opportunities in the United States. The package contains a dataset with detailed information about various grants, including categories, award ceilings, award floors, and application deadlines.
 
 
 
@@ -28,7 +25,7 @@ You can install the development version of grant from [GitHub](https://github.co
 
 ``` r
 # install.packages("pak")
-pak::pak("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17")
+
 remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17", subdir = "grant")
 ```
 

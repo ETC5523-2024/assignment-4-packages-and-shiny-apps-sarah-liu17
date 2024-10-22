@@ -3,15 +3,22 @@ Title: Grant overview
 Version: 0.0.0.9000
 Authors@R: 
     person("Sarah", "Liu", , "sarahwuliu0917@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: The package grant offers a valuable resource for understanding and navigating 
+  the landscape of grant opportunities in the USA. Whether you are a researcher, organization, 
+  or policymaker, this package helps you make informed decisions by providing insights into available grants.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 2.10)
 LazyData: true
+Imports:
+    dplyr,
+    ggplot2,
+    plotly,
+    shinydashboard,
+    DT
 Suggests: 
     knitr,
     rmarkdown

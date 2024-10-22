@@ -17,3 +17,66 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(grant)
 ```
+
+Introduction
+Welcome to the grantExplore package, a tool designed to help users explore and analyze grant opportunities with an interactive Shiny app. This vignette will walk you through the key functionalities of the package, including how to install the package, launch the Shiny app, and use the different features for exploring the dataset of grant opportunities.
+
+Installation
+To install the grantExplore package, you can use the remotes package to install it directly from GitHub.
+
+r
+Copy code
+# Install the remotes package if you haven't already
+install.packages("remotes")
+
+# Install the grantExplore package from GitHub
+remotes::install_github("yourusername/grantExplore")
+Once installed, you can load the package as follows:
+
+r
+Copy code
+library(grantExplore)
+Launching the Shiny App
+The Shiny app is the main feature of this package. It allows you to filter, analyze, and visualize grant opportunities interactively. To launch the app, simply run the following function:
+
+r
+Copy code
+launch_grant_app()
+This will open the Shiny dashboard in your web browser, where you can start exploring the dataset.
+
+The Grant Opportunities Dataset
+The dataset used in this package (grant_opp) contains detailed information about grant opportunities, including categories, award ceilings and floors, and application deadlines. The dataset is cleaned and stored within the package, and no additional data loading is required.
+
+Key Variables
+category: The category of the grant (e.g., Science, Education, Technology).
+award_ceiling: The maximum amount that can be awarded for the grant.
+award_floor: The minimum amount that can be awarded.
+current_closing_date_for_applications: The application deadline for the grant.
+Shiny App Features
+1. Filter Grants
+The "Filter Grants" tab allows you to filter grant opportunities based on the category and year of application. This tab provides a dynamic table that updates based on your selections.
+
+Category Filter: Select one or more categories from the dropdown to filter grants based on the specified fields.
+Year Filter: Select the years for which you want to view available grants. You can also select "2030 onwards" to include grants with future deadlines beyond 2030.
+Once you apply these filters, the table will display the relevant grant opportunities, including details such as category, award ceiling, award floor, and deadline for applications.
+
+2. Analyze Awards
+The "Analyze Awards" tab provides an overview of award ceilings and floors for different grant categories. You can use sliders to filter grants based on the award ceiling and floor ranges. The tab also includes a bar plot to visualize the difference between the mean award ceilings and floors by category.
+
+Award Ceiling & Floor Filters: Use the sliders to adjust the range of awards you'd like to focus on.
+Category Filter: Select the grant categories you're interested in analyzing.
+The results will be shown in a bar plot and a summary table. The plot displays the difference between the mean award ceiling and floor for each selected category, helping you easily compare different categories.
+
+Customizing the App
+The app's UI is built with the shinydashboard package and includes some basic styling. Users who are familiar with Shiny can further customize the app's appearance and interactivity.
+
+Vignette Summary
+This vignette covered the following:
+
+Installing the package
+Launching the Shiny app
+Features of the Shiny app:
+Filtering grants by category and year
+Analyzing award ceilings and floors
+With these features, the grantExplore package provides an interactive and intuitive way to explore grant opportunities and make data-driven decisions.
+
