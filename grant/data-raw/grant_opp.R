@@ -12,7 +12,7 @@ grant_opp <- read_csv("data-raw/grant_opportunity_details.csv") |>
   filter(value == TRUE) |> mutate(category = gsub("category_", "", category)) |>
   filter(current_closing_date_for_applications > 2024) |>
   select(funding_opportunity_title, expected_number_of_awards, current_closing_date_for_applications,
-         award_ceiling, award_floor, category,
+         award_ceiling, award_floor, category, opportunity_id, estimated_total_program_funding,
          eligibility_individuals,
          eligibility_state_governments,
          eligibility_county_governments,

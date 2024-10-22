@@ -33,11 +33,13 @@ install.packages("remotes")
 remotes::install_github("yourusername/grantExplore")
 Once installed, you can load the package as follows:
 
-r
-Copy code
-library(grantExplore)
-Launching the Shiny App
+Launching the Shiny App:
+```{r}
+library(grant)
+```
+
 The Shiny app is the main feature of this package. It allows you to filter, analyze, and visualize grant opportunities interactively. To launch the app, simply run the following function:
+
 
 r
 Copy code
