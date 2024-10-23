@@ -7,7 +7,7 @@
 summarize_grants_by_category(grant_opp)
 }
 \arguments{
-\item{grants}{A data frame containing grant information.}
+\item{grant_opp}{A data frame containing grant information.}
 }
 \value{
 A data frame summarizing the number of grants and total funding by category.

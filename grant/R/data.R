@@ -1,16 +1,16 @@
-#' grant and grant opportunity dataset
+#' grant and grant opportunity datasets
 #'
 #' A dataset that contains the information about grants opportunity details
 #'
 #' @format A data frame with 2843 rows and 25 variables.
 #' \describe{
-#'   \item{funding_opportunity_number}{Funding opportunity ID number}
+#'   \item{funding_opportunity_title}{Title of the opportunity}
 #'   \item{expected_number_of_awards}{Expected count of awards}
 #'   \item{current_closing_date_for_applications}{When the opportunity is currently scheduled to close}
 #'   \item{award_ceiling}{Maximum individual award amount in dollars}
 #'   \item{award_floor}{Minimum individual award amount in dollars}
 #'   \item{category}{category or type of field that the grant opportunity belongs to}
-#'   \item{opportunity_id}{Integer ID for this opportunity, which can be used to find these details at https://www.grants.gov/web/grants/view-opportunity.html?oppId={opportunity_id}}
+#'   \item{opportunity_id}{Integer ID for this opportunity}
 #'   \item{estimated_total_program_funding}{Estimated funding amount in dollars}
 #'   \item{eligibility_individuals}{Are individuals eligible?}
 #'   \item{eligibility_state_governments}{Are state governments eligible?}
@@ -31,7 +31,7 @@
 #'   \item{eligibility_unrestricted}{Is eligibility unrestricted?}
 #' }
 #' @source \url{https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-10-03}
-"grant"
+"grant_opp"
 
 #'A dataset that contains the information about grants opportunity details
 #'
@@ -43,4 +43,4 @@
 #'   \item{estimated_funding}{Estimated funding amount in dollars}
 #' }
 #' @source \url{https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-10-03}
-"grant_opp"
+"grant"

@@ -9,8 +9,8 @@ grant_opp <- read_csv("data-raw/grant_opportunity_details.csv") |>
     names_to = "category",
     values_to = "value"
   ) |>
-  filter(value == TRUE) |> mutate(category = gsub("category_", "", category)) |>
-  filter(current_closing_date_for_applications > 2024) |>
+  dplyr::filter(value == TRUE) |> mutate(category = gsub("category_", "", category)) |>
+  dplyr::filter(current_closing_date_for_applications > 2024) |>
   select(funding_opportunity_title, expected_number_of_awards, current_closing_date_for_applications,
          award_ceiling, award_floor, category, opportunity_id, estimated_total_program_funding,
          eligibility_individuals,
@@ -33,7 +33,7 @@ grant_opp <- read_csv("data-raw/grant_opportunity_details.csv") |>
 
 
 grant <- read_csv("data-raw/grants.csv") |>
-  select(opportunity_id, opportunity_title, estimated_funding, expected_number_of_awards)
+  dplyr::select(opportunity_id, opportunity_title, estimated_funding, expected_number_of_awards)
 
 usethis::use_data(grant, overwrite = TRUE)
 

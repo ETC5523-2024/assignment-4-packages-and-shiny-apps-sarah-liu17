@@ -7,11 +7,11 @@
 top_funded_grants(grant_opp, grant, top_n = 7)
 }
 \arguments{
+\item{grant_opp}{A data frame containing grant information with \code{opportunity_id} and \code{estimated_total_program_funding}.}
+
+\item{grant}{A data frame containing grant titles and categories, with \code{opportunity_id} and \code{opportunity_title} columns.}
+
 \item{top_n}{An integer specifying the number of top funded grants to display (default is 7).}
-
-\item{grants_long}{A data frame containing grant information with \code{opportunity_id} and \code{estimated_total_program_funding}.}
-
-\item{grants}{A data frame containing grant titles and categories, with \code{opportunity_id} and \code{opportunity_title} columns.}
 }
 \value{
 A ggplot object showing a bar plot of the top funded grants.
@@ -20,6 +20,6 @@ A ggplot object showing a bar plot of the top funded grants.
 This function generates a bar plot of the top N most funded grant opportunities based on estimated program funding.
 }
 \examples{
-top_funded_grants(grants_long, grants, top_n = 10)  # Display top 10 grants
-top_funded_grants(grants_long, grants)               # Display top 7 grants by default
+top_funded_grants(grant_opp, grant, top_n = 10)  # Display top 10 grants
+top_funded_grants(grant_opp, grant)               # Display top 7 grants by default
 }

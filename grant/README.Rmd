@@ -11,11 +11,12 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+library(grant)
 ```
 
 # Overview
 
-Grant is an R package designed to provide a comprehensive exploration of grant opportunities in the United States. The package contains a dataset with detailed information about various grants, including categories, award ceilings, award floors, and application deadlines.
+Grant is an R package designed to provide a comprehensive exploration of grant opportunities in the United States. The package contains a dataset with detailed information about various grants, including categories, award ceilings, award floors, eligibility and application deadlines.
 
 
 
@@ -31,14 +32,27 @@ remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah
 
 ## Example
 
-This is an example to explore the grants
+This is an example to explore the grants by category
 
 ```{r example}
-summarize_grants_by()
+summarize_grants_by_category(grant_opp)
 ```
+
+To visualise the top funded grants by the desired number
+```{r}
+top_funded_grants(grant_opp, grant, 5)
+```
+
 
 ## Shiny interactive app to explore the grants
 ```{r, eval = FALSE, echo=TRUE}
 run_grant_app()
 ```
 
+There are different options of interactive features inside the app, which allow
+the users to first investigate about grant opportunities according to their 
+expectations of eligibility, closing date and category. Users could then develop
+a clear understanding of the award range they are applying for to meet their
+capital needs by looking at the categories in the bar chart and the table for
+specific grants. The top funded grants are included at last to provide an overall
+picture of what areas are most invested by the government to secure users' fundings.

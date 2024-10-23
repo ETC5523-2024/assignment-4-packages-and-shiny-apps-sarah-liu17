@@ -42,8 +42,8 @@ ui <- dashboardPage(skin = "green",
                         tabItem(tabName = "dashboard",
                                 h2("Welcome to the Grant Opportunities exploring app"),
                                 p("This application is designed to help you explore and analyze various grant opportunities."),
-                                p("You can filter grants based on categories, years, and eligibility criteria, as well as analyze award ceilings and floors."),
-                                p("Use the tabs on the left to navigate between filtering grants, analyzing awards, and viewing this introductory dashboard.")
+                                p("You can filter grants based on categories, years, and eligibility criteria, analyze award ceilings and floors as well as unveiling the top funded grants."),
+                                p("Use the tabs on the left to navigate between filtering grants, analyzing awards, top funded grants and viewing this introductory dashboard.")
                         ),
 
                         # Tab for filtering grants by category, year, and eligibility
