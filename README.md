@@ -11,7 +11,7 @@ in an interactive app that includes categories, eligibility, award ceilings, awa
 You can install the development version of grant from [GitHub](https://github.com/ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17/tree/main/grant) with:
 
 ``` r
-# install.packages("pak")
+# install.packages("remotes")
 
 remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17", subdir = "grant")
 ```
