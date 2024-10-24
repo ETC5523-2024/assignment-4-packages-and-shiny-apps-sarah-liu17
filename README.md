@@ -17,3 +17,7 @@ remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah
 ```
 
 More information would be within the folder "grant".
+
+
+## View the package down site
+Click the [package sown site link](https://etc5523-2024.github.io/assignment-4-packages-and-shiny-apps-sarah-liu17/)
