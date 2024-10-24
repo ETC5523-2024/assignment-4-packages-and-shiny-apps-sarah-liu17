@@ -14,7 +14,7 @@ You can install the development version of grant from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
+# install.packages("remotes")
 
 remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17", subdir = "grant")
 ```
@@ -40,15 +40,6 @@ summarize_grants_by_category(grant_opp)
 #> 10 other                           85    2321036324
 #> # ℹ 14 more rows
 ```
-
-To visualise the top funded grants by the desired number
-
-``` r
-top_funded_grants(5)
-#> Adding missing grouping variables: `opportunity_id`
-```
-
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 ## Shiny interactive app to explore the grants
 

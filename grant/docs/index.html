@@ -54,7 +54,7 @@
 </h2>
 <p>You can install the development version of grant from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ETC5523-2024/assignment-4-packages-and-shiny-apps-sarah-liu17"</span>, subdir <span class="op">=</span> <span class="st">"grant"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -78,16 +78,11 @@
 <span><span class="co">#&gt;  9 natural_resources               78    2463959199</span></span>
 <span><span class="co">#&gt; 10 other                           85    2321036324</span></span>
 <span><span class="co">#&gt; # ℹ 14 more rows</span></span></code></pre></div>
-<p>To visualise the top funded grants by the desired number</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/top_funded_grants.html">top_funded_grants</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Adding missing grouping variables: `opportunity_id`</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="shiny-interactive-app-to-explore-the-grants">Shiny interactive app to explore the grants<a class="anchor" aria-label="anchor" href="#shiny-interactive-app-to-explore-the-grants"></a>
 </h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/run_grant_app.html">run_grant_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>There are different options of interactive features inside the app, which allow the users to first investigate about grant opportunities according to their expectations of eligibility, closing date and category. Users could then develop a clear understanding of the award range they are applying for to meet their capital needs by looking at the categories in the bar chart and the table for specific grants. The top funded grants are included at last to provide an overall picture of what areas are most invested by the government to secure users’ fundings.</p>
 </div>

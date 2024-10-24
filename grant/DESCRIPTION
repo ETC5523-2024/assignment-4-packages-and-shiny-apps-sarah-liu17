@@ -19,5 +19,7 @@ Imports:
     shiny
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    roxygen2
 VignetteBuilder: knitr
+url: https://etc5523-2024.github.io/assignment-4-packages-and-shiny-apps-sarah-liu17/
